@@ -1,0 +1,62 @@
+AWSTemplateFormatVersion: 2010-09-09
+Description: A serverless component for CSV to UNK conversion
+Outputs:
+  InputS3Bucket:
+    Description: Input S3 bucket
+    Value:
+      Ref: InputS3Bucket
+  OutputS3Bucket:
+    Description: Output S3 bucket
+    Value:
+      Ref: OutputS3Bucket
+Parameters:
+  ConversionTimeout:
+    Default: 60
+    Type: Number
+  InputBucketName:
+    Default: bullla-empresas
+    Type: String
+  OutputBucketName:
+    Default: bullla-empresas
+    Type: String
+Resources:
+  ConvertFileFunction:
+    Properties:
+      CodeUri: s3://sar-components-bucket/6fdbd3d12ccd0da0bfbf9116597bf386
+      Environment:
+        Variables:
+          EXTENSION: .unk
+          MIME_TYPE: text/plain
+          RESULTS_BUCKET_NAME:
+            Ref: OutputS3Bucket
+      Events:
+        FileUpload:
+          Properties:
+            Bucket:
+              Ref: InputS3Bucket
+            Events: s3:ObjectCreated:*
+          Type: S3
+      Handler: index.handler
+      MemorySize: 512
+      Policies:
+      - S3ReadPolicy:
+          BucketName:
+            Fn::Sub: ${InputBucketName}-${AWS::StackName}
+      - S3CrudPolicy:
+          BucketName:
+            Fn::Sub: ${OutputBucketName}-${AWS::StackName}
+      Runtime: nodejs8.10
+      Timeout:
+        Ref: ConversionTimeout
+    Type: AWS::Serverless::Function
+  InputS3Bucket:
+    Properties:
+      BucketName:
+        Fn::Sub: ${InputBucketName}-${AWS::StackName}
+    Type: AWS::S3::Bucket
+  OutputS3Bucket:
+    Properties:
+      BucketName:
+        Fn::Sub: ${OutputBucketName}-${AWS::StackName}
+    Type: AWS::S3::Bucket
+Transform: AWS::Serverless-2016-10-31

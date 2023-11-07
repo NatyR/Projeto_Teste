@@ -1,0 +1,19 @@
+{
+  "name": "convert-csv",
+  "version": "1.0.0",
+  "description": "Conversion of CSV to UNK",
+  "main": "index.js",
+  "scripts": {
+    "package": "aws cloudformation package --template-file template.yaml --output-template-file output.yaml --s3-bucket sar-components-bucket",
+    "deploy": "aws cloudformation deploy --template-file output.yaml --stack-name s3-lambda-csv-to-xlsx-s3 --capabilities CAPABILITY_IAM",
+    "qd": "npm run package && npm run deploy"
+  },
+  "keywords": [],
+  "author": "Felipe Elias Balarin <felipe@febinfo.com.br>",
+  "license": "MIT",
+  "dependencies": {
+    "nodemailer": "^6.7.2",
+    "csv-parser": "^3.0.0",
+    "fast-csv": "^4.3.6"
+  }
+}

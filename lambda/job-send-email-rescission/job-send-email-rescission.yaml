@@ -1,0 +1,44 @@
+AWSTemplateFormatVersion: '2010-09-09'
+Transform: 'AWS::Serverless-2016-10-31'
+Description: >
+  job-send-email-rescission
+
+  Sample SAM Template for sam-app-email
+  
+# More info about Globals: https://github.com/awslabs/serverless-application-model/blob/master/docs/globals.rst
+Globals:
+  Function:
+    Timeout: 3
+
+Resources:
+  sendemail:
+    Type: AWS::Serverless::Function # More info about Function Resource: https://github.com/awslabs/serverless-application-model/blob/master/versions/2016-10-31.md#awsserverlessfunction
+    Properties:
+      CodeUri: email-sender/
+      Handler: app.lambdaHandler
+      Runtime: nodejs12.x
+      Policies:
+        - Version: '2012-10-17'
+          Statement:
+            - Effect: Allow
+              Resource: '*'
+              Action:
+              - mq:DescribeBroker
+              - secretsmanager:GetSecretValue
+              - ec2:CreateNetworkInterface
+              - ec2:DescribeNetworkInterfaces
+              - ec2:DescribeVpcs
+              - ec2:DeleteNetworkInterface
+              - ec2:DescribeSubnets
+              - ec2:DescribeSecurityGroups
+      Events:
+        MQEvent:
+          Type: MQ
+          Properties:
+            Broker: arn:aws:mq:sa-east-1:003056540021:broker:rh-queue:b-7c1c4f97-ff56-413e-84b7-0d203fcb0868
+            Queues:
+              - JobSendEmailRescission
+            SourceAccessConfigurations:
+              - Type: BASIC_AUTH
+                URI: arn:aws:secretsmanager:sa-east-1:003056540021:secret:MQAccess-JDRN5g
+
