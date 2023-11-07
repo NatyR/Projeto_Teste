@@ -1,0 +1,24 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Users.API</name>
+    </assembly>
+    <members>
+        <member name="M:Users.API.Common.Extensions.ServiceCollectionExtensions.AddDependencyInjections(Microsoft.Extensions.DependencyInjection.IServiceCollection)">
+            <summary>
+            Método responsável por realizar o bind de dependências
+            </summary>
+            <param name="services">Coleção de serviços do startup</param>
+        </member>
+        <member name="M:Users.API.Controllers.UsersController.GetAllPaged(Users.API.Dto.User.UserFilterDto,System.Int32,System.Int32,System.String)">
+            <summary>
+            Endpoint responsável por listar todas as solicitacoes 
+            </summary>
+        </member>
+        <member name="M:Users.API.Controllers.UsersController.GetAllPaged(System.Int32,System.Int32,System.Int32,System.String,System.String)">
+            <summary>
+            Endpoint responsável por listar os usuários
+            </summary>
+        </member>
+    </members>
+</doc>

@@ -1,0 +1,30 @@
+[10:21:59 INF] Iniciando aplicação Users.API
+[10:21:59 WRN] Storing keys in a directory '/root/.aspnet/DataProtection-Keys' that may not be persisted outside of the container. Protected data will be unavailable when container is destroyed.
+[10:22:49 WRN] Failed to determine the https port for redirect.
+[10:22:50 INF] HTTP POST /api/Auth/signin responded 400 in 829.3537 ms
+[10:27:56 INF] Iniciando aplicação Users.API
+[10:27:56 WRN] Storing keys in a directory '/root/.aspnet/DataProtection-Keys' that may not be persisted outside of the container. Protected data will be unavailable when container is destroyed.
+[10:28:13 WRN] Failed to determine the https port for redirect.
+[10:28:13 INF] Signin
+[10:28:13 INF] HTTP POST /api/Auth/signin responded 400 in 749.5888 ms
+[10:29:59 INF] Iniciando aplicação Users.API
+[10:29:59 WRN] Storing keys in a directory '/root/.aspnet/DataProtection-Keys' that may not be persisted outside of the container. Protected data will be unavailable when container is destroyed.
+[10:30:25 WRN] Failed to determine the https port for redirect.
+[10:30:25 INF] Signin
+[10:30:26 INF] HTTP POST /api/Auth/signin responded 400 in 720.7445 ms
+[10:32:01 INF] Iniciando aplicação Users.API
+[10:32:01 WRN] Storing keys in a directory '/root/.aspnet/DataProtection-Keys' that may not be persisted outside of the container. Protected data will be unavailable when container is destroyed.
+[10:42:19 INF] Iniciando aplicação Users.API
+[10:42:19 WRN] Storing keys in a directory '/root/.aspnet/DataProtection-Keys' that may not be persisted outside of the container. Protected data will be unavailable when container is destroyed.
+[10:42:19 WRN] No XML encryptor configured. Key {6b9aff01-abeb-403e-bdf0-14cfa5170aaf} may be persisted to storage in unencrypted form.
+[10:44:02 INF] Iniciando aplicação Users.API
+[10:44:02 WRN] Storing keys in a directory '/root/.aspnet/DataProtection-Keys' that may not be persisted outside of the container. Protected data will be unavailable when container is destroyed.
+[10:45:52 INF] Iniciando aplicação Users.API
+[10:45:52 WRN] Storing keys in a directory '/root/.aspnet/DataProtection-Keys' that may not be persisted outside of the container. Protected data will be unavailable when container is destroyed.
+[10:46:12 INF] Iniciando aplicação Users.API
+[10:46:12 WRN] Storing keys in a directory '/root/.aspnet/DataProtection-Keys' that may not be persisted outside of the container. Protected data will be unavailable when container is destroyed.
+[10:46:23 WRN] Failed to determine the https port for redirect.
+[10:46:23 INF] Signin
+[10:46:24 INF] HTTP POST /api/Auth/signin responded 400 in 735.4497 ms
+[10:46:28 INF] Signin
+[10:46:28 INF] HTTP POST /api/Auth/signin responded 400 in 92.9646 ms
