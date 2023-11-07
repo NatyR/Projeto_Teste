@@ -1,1 +1,0 @@
-UPDATE PORTALRH.T_USUARIO SET PERFIL_ID = 2, ID_TIPO = 2 WHERE EMAIL ='natalia.souza@cotriguacu.com.br'
